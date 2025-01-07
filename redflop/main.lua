@@ -1,3 +1,5 @@
+-- redflop
+----------------------------------------------------------------------------------------
 -- A program that is is used like a T Flip Flop:
 -- The sate can be controled with a button press or remotely via rednet
 -- The flip flop state is outputed on two sides (or one)
