@@ -29,24 +29,26 @@ local function log(message)
     print(timestampedMessage)
 end
 
--- Function to check redstone input from the front side and toggle the internal boolean
+-- Function to check redstone input from the input side and toggle the internal boolean
+local prevState = false
 local function checkRedstoneInput()
     while true do
         -- Read the redstone input from the front
         local redstoneInput = redstone.getInput(input)
 
         -- Toggle the boolean if redstone is active
-        if redstoneInput then
+        if redstoneInput and not prevState then
             redstoneState = not redstoneState
             log("Redstone input detected. State toggled to: " .. tostring(redstoneState))
         end
-
+        prevState = redstoneInput
+        
         -- Wait for a short period before checking again (to avoid constant loop)
         sleep(0.1)
     end
 end
 
--- Function to output redstone to top and bottom based on the internal boolean
+-- Function to output redstone to output1 and output2 based on the internal boolean
 local function outputRedstone()
     while true do
         if redstoneState then
