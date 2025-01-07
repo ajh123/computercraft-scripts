@@ -1,6 +1,6 @@
 name = redflop
 	type = raw
-		url = https://github.com/ajh123/computercraft-scripts/raw/refs/heads/main/redflop/
+		url = https://github.com/ajh123/computercraft-scripts/raw/refs/heads/main/redflop
 		filename = main.lua
 	category = rednet system utility
 	version = 0.1.0
